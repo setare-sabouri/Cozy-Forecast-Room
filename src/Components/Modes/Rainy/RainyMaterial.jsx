@@ -14,8 +14,8 @@ const RainyMaterial = ({ count = 500 }) => {
       <Environment preset="lobby" />
       <color attach="background" args={['#08103d']} />
       <Clouds>
-        <SeasonalClouds position={[7, 8.5, 0]} bounds={[5, 1, 8]} color='#646bce' />
-        <SeasonalClouds position={[7, 8.5, 1]} bounds={[5, 1, 8]} color='#194682' />
+        <SeasonalClouds position={[7, 8, 0]} bounds={[5, 1, 8]} color='#646bce' />
+        <SeasonalClouds position={[7, 8, 1]} bounds={[5, 1, 8]} color='#194682' />
       </Clouds>
 
       <Particles count={200} mode={Weather} distanceToWindow={0.7} />

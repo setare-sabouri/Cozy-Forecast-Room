@@ -13,7 +13,7 @@ const SnowyMaterial = () => {
       <Environment preset="city" />
       <color attach="background" args={['#5a5f60']} />
       <Particles count={500} mode={Weather} distanceToWindow={-0.5}/>
-          <SeasonalClouds position={[50, 18, 0]} bounds={[1,1, 40]} color='#ffffff' />
+          <SeasonalClouds position={[50, 14, 0]} bounds={[1,1, 40]} color='#ffffff' />
     </MeshPortalMaterial>
   )
 }
