@@ -10,7 +10,7 @@ import * as THREE from 'three'
 const WindowMDL = () => {
   const { setWeather, setCityName, Weather } = useStore((state) => state)
 
-  const { scene, nodes } = useGLTF('/Models/roomb.glb')
+  const { scene, nodes } = useGLTF('/Models/roomc.glb')
   const clonedScene = scene.clone(true)
 
   // Glass 
@@ -59,7 +59,7 @@ const WindowMDL = () => {
       >
     
         <primitive object={clonedScene} />
-        <mesh geometry={nodes.Glass.geometry} scale={1.6} position={[0, 0, -5]} >
+        <mesh geometry={nodes.Glass.geometry} scale={1} position={[0, 1, -5]} >
           <WindowManager />
         </mesh>
       </group>

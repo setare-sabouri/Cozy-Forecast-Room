@@ -6,7 +6,7 @@ import WindowMDL from './Window/WindowMDL'
 import BasicPipeLine from '../BasicPipeLine/BasicPipeline'
 
 import Fire from './Fire/Fire'
-import VolumetricEffect from './Fire/Fire'
+// import VolumetricEffect from './Fire/Fire'
 import * as THREE from 'three'
 
 const Experience = () => {
