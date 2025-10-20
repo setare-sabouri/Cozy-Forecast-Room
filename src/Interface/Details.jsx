@@ -21,9 +21,9 @@ const Details = () => {
 
                 {CityName && WeatherData &&
                     <div className={styles.weatherDetails}>
-                        <p>
+                        {/* <p>
                             {`coutry is ${WeatherData.sys.country}`}
-                        </p>
+                        </p> */}
                         <p>
                             {`${Math.round(WeatherData.main.temp)} °`}
                         </p>

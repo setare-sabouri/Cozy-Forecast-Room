@@ -4,10 +4,9 @@ import { Perf } from 'r3f-perf'
 
 import WindowMDL from './Window/WindowMDL'
 import BasicPipeLine from '../BasicPipeLine/BasicPipeline'
-
-import Fire from './Fire/Fire'
-// import VolumetricEffect from './Fire/Fire'
+import VolumetricEffect from './Fire/Fire'
 import * as THREE from 'three'
+
 
 const Experience = () => {
   return (
@@ -16,13 +15,12 @@ const Experience = () => {
         <WindowMDL />
 
         {/* Fire  */}
-        {/* <VolumetricEffect color={new THREE.Color(0xf5f5f5)} texturePath="/Textures/fire.png" position={[8.8, -2.9, 2]} scale={[2, 2, 2]} magnitude={3} speed={1}  opacity={0.5} /> */}
-
+        <VolumetricEffect color={new THREE.Color(0xf5f5f5)} texturePath="/Textures/fire.png" position={[8.8, -2.9, 2]} scale={[2, 2, 2]} magnitude={3} speed={1}  opacity={0.5} />
          {/* Tea Steam */}
-        {/* <VolumetricEffect color={new THREE.Color('#969292')} texturePath="/Textures/steam.jpg" position={[-2.4, 1.8, 1.7]} scale={[1, 4, 1]} magnitude={3} speed={0.5}  opacity={0.15} /> */}
-
+        <VolumetricEffect color={new THREE.Color('#969292')} texturePath="/Textures/steam.jpg" position={[-2.4, 1.8, 1.7]} scale={[1, 4, 1]} magnitude={3} speed={0.5}  opacity={0.15} />
+        
       </PresentationControls>
-      <OrbitControls/>
+      {/* <OrbitControls/> */}
       <Perf position="top-left" />
       <color attach="background" args={['#47271b']} />  
       <ambientLight intensity={0.1} />
