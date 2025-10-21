@@ -1,4 +1,4 @@
-import { Environment, OrbitControls, PresentationControls } from '@react-three/drei'
+import { Environment, OrbitControls, PresentationControls, Stage } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Perf } from 'r3f-perf'
 
@@ -12,6 +12,7 @@ const Experience = () => {
   return (
     <Canvas shadows camera={{ position: [-0.5, 7, 33], fov: 30, rotation: [-Math.PI / 15, 0, 0] }}>
       <PresentationControls polar={[-Math.PI / 3, Math.PI / 3]} azimuth={[-Math.PI / 2, Math.PI / 2]} snap speed={0.5}>
+
         <WindowMDL />
 
         {/* Fire  */}
@@ -24,8 +25,9 @@ const Experience = () => {
       <Perf position="top-left" />
       <color attach="background" args={['#47271b']} />  
       <ambientLight intensity={0.1} />
-      {/* <Environment preset='city' /> */}
-      <directionalLight position={[0, 6, 14]} intensity={1} castShadow />
+      <Environment preset='city' />
+      <directionalLight position={[0, 6, 14]} intensity={1} castShadow color={'#dd9300'}/>
+
       <BasicPipeLine />
     </Canvas>
 
