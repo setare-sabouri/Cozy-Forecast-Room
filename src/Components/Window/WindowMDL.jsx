@@ -20,7 +20,7 @@ const WindowMDL = () => {
 
   // Weathers
   const clickableNames = ['Sunny', 'Stormy', 'Rainy', 'Cloudy', 'Snowy']
-
+console.log("help")
   const handleClick = (e) => {
     e.stopPropagation() 
 
