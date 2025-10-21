@@ -25,7 +25,7 @@ const Experience = () => {
       <color attach="background" args={['#47271b']} />  
       <ambientLight intensity={0.1} />
       {/* <Environment preset='city' /> */}
-      <directionalLight position={[0, 6, 14]} intensity={3} castShadow />
+      <directionalLight position={[0, 6, 14]} intensity={1} castShadow />
       <BasicPipeLine />
     </Canvas>
 

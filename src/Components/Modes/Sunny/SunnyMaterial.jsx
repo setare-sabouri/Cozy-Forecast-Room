@@ -16,7 +16,7 @@ const SunnyMaterial = () => {
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
       <group >
-        <Sphere args={[1, 32, 32]} material={SunMaterial} position={[5, 6, 4]}/>
+        <Sphere args={[1, 32, 32]} material={SunMaterial} position={[5, 8, 4]}/>
       </group>
     </MeshPortalMaterial>
   )
