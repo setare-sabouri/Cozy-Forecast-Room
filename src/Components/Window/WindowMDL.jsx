@@ -21,9 +21,10 @@ const WindowMDL = () => {
   const clickableNames = ['Sunny', 'Stormy', 'Rainy', 'Cloudy', 'Snowy']
 
   const handleClick = (e) => {
-    e.stopPropagation()
-    const name = e.object.userData.name
+    e.stopPropagation() 
 
+  // Weathers clicks
+    const name = e.object.userData.name
     if (clickableNames.includes(name)) {
       console.log(`🌟 Clicked on: ${name}`)
       e.object.rotation.z += 0.1
@@ -31,6 +32,8 @@ const WindowMDL = () => {
       setCityName(null)
     }
   }
+
+
 
   const basey = clonedScene.getObjectByName(Weather).position.y
   useFrame((state) => {
@@ -42,15 +45,17 @@ const WindowMDL = () => {
   })
 
 
+
   // Apply emissive color based on each object's original color
   clickableNames.forEach((name) => {
     const obj = clonedScene.getObjectByName(name)
     if (obj && obj.material) {
     const baseColor = obj.material.emissive?.clone?.() || obj.material.color?.clone?.() || new THREE.Color(0xffffff)
     obj.material.emissive = baseColor
-    obj.material.emissiveIntensity = 2
+    obj.material.emissiveIntensity = 3
     }
   })
+
 
   return (
     <Suspense fallback={null}>

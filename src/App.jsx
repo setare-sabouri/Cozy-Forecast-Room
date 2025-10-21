@@ -8,9 +8,8 @@ import WeathersAudio from './Utils/Audio/WeathersAudio'
 
 
 function App() {
-  const {WeatherData,Weather} =useStore()
-  console.log(WeatherData)
-  console.log((Weather))
+  const {Weather} =useStore()
+
   return (
     <>
     <Experience/>
