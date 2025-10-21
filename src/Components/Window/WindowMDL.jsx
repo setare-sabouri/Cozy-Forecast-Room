@@ -5,12 +5,10 @@ import { useStore } from '../../Store/useStore'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-
-
 const WindowMDL = () => {
   const { setWeather, setCityName, Weather } = useStore((state) => state)
 
-  const { scene, nodes } = useGLTF('/Models/room.glb')
+  const { scene, nodes } = useGLTF('/Models/roomroom.glb')
   const clonedScene = scene.clone(true)
 
   // Glass 
@@ -73,3 +71,5 @@ console.log("help")
 }
 
 export default WindowMDL
+
+useGLTF.preload('/Models/roomroom.glb')
