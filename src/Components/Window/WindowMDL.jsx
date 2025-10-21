@@ -41,7 +41,7 @@ const WindowMDL = () => {
     }
   })
 
-
+console.log("llllll")
   // Apply emissive color based on each object's original color
   clickableNames.forEach((name) => {
     const obj = clonedScene.getObjectByName(name)
