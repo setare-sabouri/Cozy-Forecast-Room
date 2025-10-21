@@ -16,6 +16,7 @@ const WindowMDL = () => {
   // Glass 
   const glass = clonedScene.getObjectByName('Glass')
   if (glass && glass.parent) glass.parent.remove(glass)
+    console.log("object")
 
   // Weathers
   const clickableNames = ['Sunny', 'Stormy', 'Rainy', 'Cloudy', 'Snowy']
