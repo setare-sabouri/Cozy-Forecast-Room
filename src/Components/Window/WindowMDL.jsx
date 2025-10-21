@@ -10,7 +10,7 @@ import * as THREE from 'three'
 const WindowMDL = () => {
   const { setWeather, setCityName, Weather } = useStore((state) => state)
 
-  const { scene, nodes } = useGLTF('/Models/roomc.glb')
+  const { scene, nodes } = useGLTF('/Models/ro.glb')
   const clonedScene = scene.clone(true)
 
   // Glass 
