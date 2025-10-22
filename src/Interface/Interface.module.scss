@@ -68,3 +68,37 @@
 
   }
 }
+
+
+
+
+// rotation Overlay
+.rotateOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &__icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+}
