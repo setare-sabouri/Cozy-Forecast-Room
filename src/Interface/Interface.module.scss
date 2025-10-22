@@ -70,9 +70,12 @@
     background: #ffffff3f;
     padding: 1rem;
     border-radius: 1rem;
-    font-size: 1.3rem;
   }
 
+  @include respond(largeDevice) {
+    font-size: 1.3rem;
+
+  }
   @include respond(mediumDevice) {
     font-size: 0.8rem;
   }
