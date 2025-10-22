@@ -1,3 +1,7 @@
+@import "/src/Utils/_breakpoints.scss";
+
+
+
 // Search Component
 
 .searchForm {
@@ -39,7 +43,7 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  
+
 
 
   .CityWeather {
@@ -50,6 +54,7 @@
     background: #ffffff3f;
     border-radius: 1rem;
     padding: 0.9rem;
+
 
 
   }
@@ -65,8 +70,18 @@
     background: #ffffff3f;
     padding: 1rem;
     border-radius: 1rem;
-
+    font-size: 1.3rem;
   }
+
+  @include respond(mediumDevice) {
+    font-size: 0.8rem;
+  }
+
+  @include respond(smallDevice) {
+    font-size: 0.6rem;
+  }
+
+
 }
 
 
