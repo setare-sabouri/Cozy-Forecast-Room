@@ -12,18 +12,15 @@ const Details = () => {
             <div className={styles.DetailsContainer}>
 
                 <div className={styles.CityWeather}>
-                    <h1>
+                    <h2>
                         {WeatherData && CityName
                             ? `${WeatherData.weather[0].main} in ${CityName}`
                             : `${Weather}`}
-                    </h1>
+                    </h2>
                 </div>
 
                 {CityName && WeatherData &&
                     <div className={styles.weatherDetails}>
-                        {/* <p>
-                            {`coutry is ${WeatherData.sys.country}`}
-                        </p> */}
                         <p>
                             {`${Math.round(WeatherData.main.temp)} °`}
                         </p>

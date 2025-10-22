@@ -21,8 +21,8 @@ const Experience = () => {
         <VolumetricEffect color={new THREE.Color('#969292')} texturePath="/Textures/steam.jpg" position={[-2.4, 1.8, 1.7]} scale={[1, 4, 1]} magnitude={3} speed={0.5}  opacity={0.15} />
         
       </PresentationControls>
-      <OrbitControls/>
-      <Perf position="top-left" />
+      {/* <OrbitControls/> */}
+      {/* <Perf position="top-left" /> */}
       <color attach="background" args={['#47271b']} />  
       <ambientLight intensity={0.1} />
 

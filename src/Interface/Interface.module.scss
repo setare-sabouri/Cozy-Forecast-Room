@@ -39,6 +39,7 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+  
 
 
   .CityWeather {
@@ -46,6 +47,11 @@
     position: absolute;
     top: 4%;
     left: 4%;
+    background: #ffffff3f;
+    border-radius: 1rem;
+    padding: 0.9rem;
+
+
   }
 
   .weatherDetails {
@@ -54,9 +60,8 @@
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
+    bottom: 4%;
+    left: 4%;
     background: #ffffff3f;
     padding: 1rem;
     border-radius: 1rem;
