@@ -1,4 +1,4 @@
-import { Environment, OrbitControls, PresentationControls, Stage } from '@react-three/drei'
+import { OrbitControls, PresentationControls, Stage } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Perf } from 'r3f-perf'
 
@@ -21,12 +21,12 @@ const Experience = () => {
         <VolumetricEffect color={new THREE.Color('#969292')} texturePath="/Textures/steam.jpg" position={[-2.4, 1.8, 1.7]} scale={[1, 4, 1]} magnitude={3} speed={0.5}  opacity={0.15} />
         
       </PresentationControls>
-      {/* <OrbitControls/> */}
+      <OrbitControls/>
       <Perf position="top-left" />
       <color attach="background" args={['#47271b']} />  
       <ambientLight intensity={0.1} />
-      <Environment preset='city' />
-      <directionalLight position={[0, 6, 14]} intensity={1} castShadow color={'#dd9300'}/>
+
+      <directionalLight position={[0, 6, 14]} intensity={2} castShadow />
 
       <BasicPipeLine />
     </Canvas>
