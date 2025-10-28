@@ -35,7 +35,7 @@ const WindowMDL = () => {
       const star = clonedScene.getObjectByName(name)
       if (star && star.material) {
         starStates.current[name] = !starStates.current[name] 
-        star.material.emissiveIntensity = starStates.current[name] ? 3 : 0.2
+        star.material.emissiveIntensity = starStates.current[name] ? 2 : 0.2
       }
       return
     }
@@ -68,14 +68,13 @@ const WindowMDL = () => {
     const star = clonedScene.getObjectByName(name)
     if (star?.material) {
       star.material.emissive = new THREE.Color(0xffffcc)
-      star.material.emissiveIntensity = 0.3
+      star.material.emissiveIntensity = 2
     }
   })
 
   return (
     <Suspense fallback={null}>
       <group
-        receiveShadow
         scale={0.4}
         position={[2.5, -1.7, 0]}
         rotation={[0, Math.PI / 2, 0]}
