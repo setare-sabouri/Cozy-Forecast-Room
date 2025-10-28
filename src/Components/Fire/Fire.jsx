@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useRef, useLayoutEffect, useEffect } from 'react'
 import { extend, useFrame, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
 import glsl from 'babel-plugin-glsl/macro'
@@ -20,7 +20,7 @@ class VolumetricMaterial extends THREE.ShaderMaterial {
         lacunarity: { type: 'f', value: 3.0 },
         gain: { type: 'f', value: 0.6 },
         speed: { type: 'f', value: 1.0 },
-        opacity: { type: 'f', value: 1.0 }, // opacity control
+        opacity: { type: 'f', value: 1.0 },
       },
       vertexShader: `
         varying vec3 vWorldPos;
@@ -30,7 +30,6 @@ class VolumetricMaterial extends THREE.ShaderMaterial {
         }`,
       fragmentShader: glsl`
         #pragma glslify: snoise = require(glsl-noise/simplex/3d.glsl)
-
         uniform vec3 color;
         uniform float time;
         uniform float seed;
@@ -83,7 +82,7 @@ class VolumetricMaterial extends THREE.ShaderMaterial {
             lp.xz *= 2.0;
             col += samplerEffect(lp, noiseScale);
           }
-          col.a = col.r * opacity; // Apply opacity
+          col.a = col.r * opacity;
           gl_FragColor = vec4(col.rgb * color, col.a);
         }`
     })
@@ -92,16 +91,16 @@ class VolumetricMaterial extends THREE.ShaderMaterial {
 
 extend({ VolumetricMaterial })
 
-// ✅ Reusable Component (Box only)
+// ✅ Reusable Volumetric Fire Component
 export default function VolumetricEffect({
   color = new THREE.Color(0xffffff),
   texturePath = '/Textures/fire.png',
-  texture,       // optional: preloaded THREE.Texture
+  texture, // optional: preloaded THREE.Texture
   magnitude = 2.5,
   lacunarity = 3.0,
   gain = 0.6,
   speed = 1.0,
-  opacity = 1.0,  // opacity prop
+  opacity = 1.0,
   position = [0, 0, 0],
   scale = [1, 1, 1],
   ...props
@@ -137,6 +136,17 @@ export default function VolumetricEffect({
     mat.uniforms.seed.value = Math.random() * 19.19
   }, [tex, color, magnitude, lacunarity, gain, speed, opacity, scale])
 
+  // ✅ CLEANUP ON UNMOUNT
+  useEffect(() => {
+    return () => {
+      if (tex) tex.dispose()
+      if (ref.current) {
+        if (ref.current.geometry) ref.current.geometry.dispose()
+        if (ref.current.material) ref.current.material.dispose()
+      }
+    }
+  }, [tex])
+
   return (
     <mesh ref={ref} position={position} scale={scale} {...props}>
       <boxGeometry />
@@ -144,4 +154,3 @@ export default function VolumetricEffect({
     </mesh>
   )
 }
-  
