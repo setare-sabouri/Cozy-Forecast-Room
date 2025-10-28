@@ -28,7 +28,6 @@ const Experience = () => {
       {/* <Perf position="top-left" /> */}
       <color attach="background" args={['#25140e']} />
       <ambientLight intensity={1} color={'#ffffff'} />
-
       <BasicPipeLine />
     </Canvas>
 

@@ -8,7 +8,7 @@ const BasicPipeLine = () => {
             <Bloom
                 intensity={1}        
                 luminanceThreshold={0}  
-                luminanceSmoothing={4}
+                luminanceSmoothing={3}
             />
         </EffectComposer>
 

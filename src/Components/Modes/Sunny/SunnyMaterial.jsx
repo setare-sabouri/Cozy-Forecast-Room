@@ -35,3 +35,5 @@ const SunnyMaterial = () => {
 }
 
 export default SunnyMaterial
+
+useGLTF.preload('/Models/bird.glb')

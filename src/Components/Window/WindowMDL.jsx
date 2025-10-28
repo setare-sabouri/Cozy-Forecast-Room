@@ -7,7 +7,7 @@ import * as THREE from 'three'
 
 const WindowMDL = () => {
   const { setWeather, setCityName, Weather } = useStore((state) => state)
-  const { scene, nodes } = useGLTF('/Models/bib.glb')
+  const { scene, nodes } = useGLTF('/Models/room.glb')
   const clonedScene = scene.clone(true)
 
   // Glass
@@ -34,7 +34,7 @@ const WindowMDL = () => {
     if (starNames.includes(name)) {
       const star = clonedScene.getObjectByName(name)
       if (star && star.material) {
-        starStates.current[name] = !starStates.current[name] 
+        starStates.current[name] = !starStates.current[name]
         star.material.emissiveIntensity = starStates.current[name] ? 2 : 0.2
       }
       return
@@ -47,6 +47,14 @@ const WindowMDL = () => {
       setWeather(name)
       setCityName(null)
     }
+
+
+    // Cat
+    // if (name === "Model_material0_0") {
+    //   const audio = new Audio("./Audios/Cat.mp3");
+    //   audio.play();
+    // }
+
   }
 
   // Animate Weather
