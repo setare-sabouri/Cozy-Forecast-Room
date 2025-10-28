@@ -6,7 +6,6 @@ import { useStore } from '../../Store/useStore'
 const DirectionalLightVisible = (props) => {
   const ref = useRef()
   // useHelper(ref, THREE.DirectionalLightHelper, 1)
-
   // dispose
   useEffect(() => {
     const light = ref.current
@@ -18,9 +17,6 @@ const DirectionalLightVisible = (props) => {
   }, [])
   return <directionalLight ref={ref} {...props} />
 }
-
-
-
 
 const Lights = () => {
 
