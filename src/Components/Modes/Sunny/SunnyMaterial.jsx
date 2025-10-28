@@ -12,7 +12,7 @@ const SunnyMaterial = () => {
 
   // Birds
   const Birds = useGLTF('/Models/bird.glb')
-  const { actions,names } = useAnimations(Birds.animations,Birds.scene)
+  const { actions, names } = useAnimations(Birds.animations, Birds.scene)
 
   useEffect(() => {
     if (actions && names.length > 0) {
@@ -20,6 +20,39 @@ const SunnyMaterial = () => {
       action.play()
     }
   }, [actions, names])
+
+
+
+  // Dispose on unmount
+  useEffect(() => {
+    return () => {
+      // Dispose texture and material
+      if (SunTex) SunTex.dispose()
+      if (SunMaterial) SunMaterial.dispose()
+
+      // Dispose GLTF scene
+      if (Birds?.scene) {
+        Birds.scene.traverse((child) => {
+          if (child.geometry) child.geometry.dispose()
+          if (child.material) {
+            if (Array.isArray(child.material)) {
+              child.material.forEach((mat) => mat.dispose())
+            } else {
+              child.material.dispose()
+            }
+          }
+        })
+      }
+
+      // Dispose animation clips
+      if (Birds.animations) {
+        Birds.animations.forEach((clip) => {
+          if (clip) clip.dispose?.()
+        })
+      }
+    }
+  }, [Birds, SunTex, SunMaterial])
+
 
   return (
     <MeshPortalMaterial>

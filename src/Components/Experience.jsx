@@ -32,7 +32,7 @@ const Experience = () => {
       </PresentationControls>
       <Lights/>
       {/* <OrbitControls /> */}
-      {/* <Perf position="top-left" /> */}
+      <Perf position="top-left" />
       <color attach="background" args={['#25140e']} />
       <ambientLight intensity={1} color={'#ffffff'} />
       <BasicPipeLine />
@@ -44,3 +44,7 @@ const Experience = () => {
 export default Experience
 
 
+
+
+// x jolo aghab 
+// y bala paein

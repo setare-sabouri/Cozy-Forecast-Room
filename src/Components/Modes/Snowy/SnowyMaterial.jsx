@@ -4,11 +4,30 @@ import Particles from '../Particles'
 import SeasonalClouds from '../Clouds'
 import { useStore } from '../../../Store/useStore'
 import Lights from '../../Lights/Lights'
+import { useEffect } from 'react'
 
 const SnowyMaterial = () => {
   const { Weather } = useStore()
   const snow = useGLTF('/Models/snow_man.glb')
 
+
+    // Dispose of the GLTF scene and its geometries/materials on unmount
+  useEffect(() => {
+    return () => {
+      if (snow?.scene) {
+        snow.scene.traverse((child) => {
+          if (child.geometry) child.geometry.dispose()
+          if (child.material) {
+            if (Array.isArray(child.material)) {
+              child.material.forEach((mat) => mat.dispose())
+            } else {
+              child.material.dispose()
+            }
+          }
+        })
+      }
+    }
+  }, [snow])
 
   return (
     <MeshPortalMaterial>
@@ -26,5 +45,6 @@ const SnowyMaterial = () => {
 
 export default SnowyMaterial
 
-// x jolo aghab 
-// y bala paein
+useGLTF.preload('/Models/snow_man.glb')
+
+

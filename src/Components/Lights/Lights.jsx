@@ -27,13 +27,13 @@ const Lights = () => {
       <DirectionalLightVisible
         position={[8, 5, 10]}
         intensity={1.9}
-        color={Weather === 'Sunny' ? '#bfbd63' : Weather === "Cloudy" ? '#372e2e' : Weather === "Snowy" ? "#545454": Weather === "Rainy" ? "#ae9bd5": '#a10000'}
+        color={Weather === 'Sunny' ? '#bfbd63' : Weather === "Cloudy" ? '#372e2e' : Weather === "Snowy" ? "#b39ac1": Weather === "Rainy" ? "#ae9bd5": '#a10000'}
       />
 
       <DirectionalLightVisible
         position={[-9, 0, 14]}
         intensity={2}
-         color={Weather === 'Sunny' ? '#eeeeee' : Weather === "Cloudy" ? '#af9d9d' : Weather === "Snowy" ? "#ffffff":Weather === "Rainy" ? "#545151": '#9c9b9a'}
+         color={Weather === 'Sunny' ? '#eeeeee' : Weather === "Cloudy" ? '#af9d9d' : Weather === "Snowy" ? "#827e97":Weather === "Rainy" ? "#545151": '#9c9b9a'}
       />
     </>
   )
