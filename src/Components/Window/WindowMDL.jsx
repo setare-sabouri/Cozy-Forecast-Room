@@ -4,6 +4,7 @@ import { Suspense, useRef, useState } from 'react'
 import { useStore } from '../../Store/useStore'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
+import PlaceHolder from '../../Utils/PlaceHolder/PlaceHolder'
 
 const WindowMDL = () => {
   const { setWeather, setCityName, Weather } = useStore((state) => state)
@@ -72,7 +73,7 @@ const WindowMDL = () => {
   })
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<PlaceHolder/>}>
       <group
         scale={0.4}
         position={[2.5, -1.7, 0]}

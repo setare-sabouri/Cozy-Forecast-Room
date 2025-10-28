@@ -1,5 +1,4 @@
 import { useGLTF } from '@react-three/drei'
-import React from 'react'
 
 const Dog = () => {
 
@@ -19,3 +18,6 @@ const Dog = () => {
 }
 
 export default Dog
+
+
+useGLTF.preload('/Models/dog.glb')
