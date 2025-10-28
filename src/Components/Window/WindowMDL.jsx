@@ -48,13 +48,6 @@ const WindowMDL = () => {
       setCityName(null)
     }
 
-
-    // Cat
-    // if (name === "Model_material0_0") {
-    //   const audio = new Audio("./Audios/Cat.mp3");
-    //   audio.play();
-    // }
-
   }
 
   // Animate Weather
@@ -68,8 +61,6 @@ const WindowMDL = () => {
       }
     }
   })
-
-
 
   //  stars
   starNames.forEach((name) => {
