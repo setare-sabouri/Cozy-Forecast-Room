@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect, useEffect } from 'react'
 import { extend, useFrame, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
 import glsl from 'babel-plugin-glsl/macro'
+import gsap from 'gsap'
 
 // ✅ Shader Material
 class VolumetricMaterial extends THREE.ShaderMaterial {
@@ -136,7 +137,7 @@ export default function VolumetricEffect({
     mat.uniforms.seed.value = Math.random() * 19.19
   }, [tex, color, magnitude, lacunarity, gain, speed, opacity, scale])
 
-  // ✅ CLEANUP ON UNMOUNT
+  //  CLEANUP ON UNMOUNT
   useEffect(() => {
     return () => {
       if (tex) tex.dispose()
@@ -147,8 +148,15 @@ export default function VolumetricEffect({
     }
   }, [tex])
 
+  const handleClick=(e)=>{
+     if (!ref.current) return
+    const mat = ref.current.material
+    gsap.to(mat.uniforms.magnitude, { value: 10, duration: 0.5, yoyo: true, repeat: 1 })
+   
+  }
+
   return (
-    <mesh ref={ref} position={position} scale={scale} {...props}>
+    <mesh ref={ref} position={position} scale={scale} {...props} onClick={handleClick}>
       <boxGeometry />
       <volumetricMaterial transparent depthWrite={false} depthTest={false} />
     </mesh>
