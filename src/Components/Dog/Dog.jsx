@@ -1,4 +1,6 @@
 import { useGLTF } from '@react-three/drei'
+// import { motion } from 'framer-motion-3d'
+
 
 const Dog = () => {
 
@@ -14,6 +16,9 @@ const Dog = () => {
         <group scale={2} position={[-9.5, -4, 8]} rotation={[0, -Math.PI / 3, 0]} onClick={handleClick}>
             <primitive object={dog.scene} />
         </group>
+
+    
+  
     )
 }
 
